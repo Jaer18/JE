@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JE</title>
+
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Condiment|Lato:100,400);
+
+        *,
+        *:after,
+        *:before {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background: #3f474f;
+            font-size: 100%;
+        }
+
+        a,
+        a:visited,
+        a:focus {
+            text-decoration: inherit;
+            font-weight: inherit;
+            color: inherit;
+        }
+
+        a:hover,
+        a:visited:hover,
+        a:focus:hover {
+            text-decoration: underline;
+        }
+
+        h2,
+        h3 {
+            font-weight: 300;
+        }
+
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        h3 {
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        ul {
+            margin-top: 30px;
+        }
+
+        li {
+            font-size: 0.8rem;
+            margin: 15px 0 0 35px;
+        }
+
+        li a {
+            font-weight: 100;
+        }
+
+        li span {
+            margin-right: 10px;
+            color: #10d7af;
+            font-weight: 400;
+            font-size: 0.7em;
+        }
+
+        .container {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 450px;
+            height: 281px;
+            z-index: 1;
+            perspective: 1000px;
+        }
+
+        .container .card {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: all 600ms linear;
+        }
+
+        .container .card .face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            background: #282e33;
+        }
+
+        .container .card .front {
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .container .card .front h1 {
+            font: 4em 'Condiment', cursive;
+            color: #2f353b;
+            position: relative;
+            text-align: center;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .container .card .back {
+            display: block;
+            transform: rotateX(180deg);
+            box-sizing: border-box;
+            padding: 30px;
+            color: #ddd;
+            background: #282e33;
+            z-index: 1;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .container .card .back .icon-share {
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+        }
+
+        .container .card .back .icon-share .icon:hover {
+            text-decoration: none;
+        }
+
+        .container:hover .card {
+            transform: rotateX(180deg);
+        }
+
+        button {
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.9);
+            font: 0.8em 'Lato', sans-serif;
+            background: rgba(16, 215, 175, 0.95);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            box-shadow: 0 4px 0 0 #0b9075;
+            cursor: pointer;
+            position: fixed;
+            z-index: 10;
+            top: 15px;
+            right: 20px;
+        }
+
+        button:hover {
+            color: rgba(255, 255, 255, 1);
+            background: rgba(16, 215, 175, 1);
+            top: 17px;
+        }
+
+        /* Wobble Vertical */
+        @keyframes wobble-vertical {
+            16.65% {
+                transform: translateY(8px);
+            }
+
+            33.3% {
+                transform: translateY(-4px);
+            }
+
+            49.95% {
+                transform: translateY(3px);
+            }
+
+            66.6% {
+                transform: translateY(-1px);
+            }
+
+            83.25% {
+                transform: translateY(1px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .wobble-vertical {
+            display: inline-block;
+        }
+
+        .wobble-vertical:hover {
+            animation-name: wobble-vertical;
+            animation-duration: 1s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: 1;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="card">
+            <div class="front face">
+                <h1>Jose Elizondo R.</h1>
+            </div>
+            <div class="back face">
+                <h2>Jose Elizondo R.</h2>
+                <h3>IT Engineer</h3>
+                <ul>
+                    <li>
+                        <span>E-MAIL&nbsp;&nbsp;</span>
+                        <a href="mailto:jaelizondor@gmail.com" target="_blank">
+                            jaelizondor@gmail.com
+                        </a>
+                    </li>
+                    <li>
+                        <span>GITHUB&nbsp;&nbsp;</span>
+                        <a href="https://github.com/Jaer18" target="_blank">
+                            github.com/Jaer18
+                        </a>
+                    </li>
+                    <li>
+                        <span>TWITTER&nbsp;&nbsp;</span>
+                        <a href="https://twitter.com/aj_18180" target="_blank">
+                            twitter.com/aj_18180
+                        </a>
+                    </li>
+                </ul>
+                <div>
+                    <div class="icon-share">
+                        <a class="icon" href="https://paypal.me/jaelizondor" target="_blank">
+                            <img src="icons/paypal.png" width="40" height="40" alt="PayPal">
+                        </a>
+                        <a class="icon" href="bc.txt" target="_blank">
+                            <img src="icons/bitcoin.png" width="40" height="40" alt="BitCoin">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
